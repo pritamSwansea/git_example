@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
+use App\Models\Customer;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class order extends Model
+class Order extends Model
 {
     use HasFactory;
     /**
@@ -36,9 +37,9 @@ class order extends Model
     /**
      * Get the customer who owns the order.
      */
-    public function post(): BelongsTo
+    public function customer(): BelongsTo
     {
-        return $this->belongsTo(customer::class, 'foreign_key', 'customerId');
+        return $this->belongsTo(Customer::class, 'foreign_key', 'customerId');
     }
 
     /**
@@ -46,6 +47,6 @@ class order extends Model
      */
     public function orderDetails(): BelongsToMany
     {
-        return $this->belongsToMany(orderDetails::class, 'order_details', 'orderId');
+        return $this->belongsToMany(OrderDetails::class, 'order_details', 'orderId');
     }
 }

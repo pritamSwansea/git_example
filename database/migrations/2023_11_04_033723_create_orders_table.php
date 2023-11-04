@@ -20,7 +20,8 @@ return new class extends Migration
             $table->string('comments');
             $table->unsignedBigInteger('customerId');
 
-            $table->foreign('customerId')->references('customerId')->on('customers');
+            $table->foreign('customerId')->references('customerId')->on('customers')
+                ->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

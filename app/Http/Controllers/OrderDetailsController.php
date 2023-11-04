@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreorderDetailsRequest;
 use App\Http\Requests\UpdateorderDetailsRequest;
-use App\Models\orderDetails;
+use App\Models\OrderDetails;
 
 class OrderDetailsController extends Controller
 {

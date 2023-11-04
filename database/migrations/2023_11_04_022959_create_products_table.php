@@ -15,6 +15,7 @@ return new class extends Migration
             // $table->id();
             $table->id('productId');
             $table->string('productName');
+            $table->string('productCode');
             $table->string('productDescription');
             $table->string('productPrice');
             $table->timestamps();

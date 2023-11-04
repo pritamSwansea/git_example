@@ -5,7 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\order>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Order>
  */
 class OrderFactory extends Factory
 {
@@ -19,7 +19,8 @@ class OrderFactory extends Factory
         return [
             'orderDate' => now(),
             'orderAmount' => fake()->numberBetween(99, 999),
-            'comments' => fake()->randomLetter()
+            'comments' => fake()->randomLetter(),
+            'customerId' => 1
         ];
     }
 }
