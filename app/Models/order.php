@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class customer extends Model
+class order extends Model
 {
     use HasFactory;
     /**
@@ -14,7 +14,7 @@ class customer extends Model
      *
      * @var string
      */
-    protected $primaryKey = 'customerId';
+    protected $primaryKey = 'orderId';
     /**
      * Indicates if the model's ID is auto-incrementing.
      *
@@ -27,15 +27,15 @@ class customer extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'customerName',
-        'customerAddress',
-        'taxId'
+        'orderDate',
+        'orderAmount',
+        'comments'
     ];
     /**
-     * Get the orders of customer.
+     * Get the customer who owns the order.
      */
-    public function comments(): HasMany
+    public function post(): BelongsTo
     {
-        return $this->hasMany(order::class, 'foreign_key', 'customerId');
+        return $this->belongsTo(customer::class, 'foreign_key', 'customerId');
     }
 }
