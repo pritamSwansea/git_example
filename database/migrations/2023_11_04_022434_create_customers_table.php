@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id('customerId');
             $table->string('customerName');
             $table->string('customerAddress');
-            $table->string('taxId')->uniqid();
+            $table->string('taxId')->unique()->text(16);
             $table->timestamps();
         });
     }

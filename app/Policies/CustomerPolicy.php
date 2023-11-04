@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Models\customer;
+use App\Models\Customer;
 use Illuminate\Auth\Access\Response;
 
 class CustomerPolicy

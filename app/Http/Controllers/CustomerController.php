@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StorecustomerRequest;
 use App\Http\Requests\UpdatecustomerRequest;
-use App\Models\customer;
+use App\Models\Customer;
 
 class CustomerController extends Controller
 {

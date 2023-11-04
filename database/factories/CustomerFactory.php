@@ -19,7 +19,7 @@ class CustomerFactory extends Factory
         return [
             'customerName' => fake()->name(),
             'customerAddress' => fake()->unique()->address(),
-            'taxId' => fake()->uniqid()
+            'taxId' => fake()->unique()->numberBetween(1000, 9999)
         ];
     }
 }
