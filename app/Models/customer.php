@@ -34,7 +34,7 @@ class customer extends Model
     /**
      * Get the orders of customer.
      */
-    public function comments(): HasMany
+    public function customers(): HasMany
     {
         return $this->hasMany(order::class, 'foreign_key', 'customerId');
     }

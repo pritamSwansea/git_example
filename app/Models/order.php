@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class order extends Model
 {
@@ -37,5 +39,13 @@ class order extends Model
     public function post(): BelongsTo
     {
         return $this->belongsTo(customer::class, 'foreign_key', 'customerId');
+    }
+
+    /**
+     * Get the order details which belongs to a order.
+     */
+    public function orderDetails(): BelongsToMany
+    {
+        return $this->belongsToMany(orderDetails::class, 'order_details', 'orderId');
     }
 }
