@@ -14,13 +14,13 @@ class Product extends Model
      *
      * @var string
      */
-    protected $primaryKey = 'productId';
+    // protected $primaryKey = 'productId';
     /**
      * Indicates if the model's ID is auto-incrementing.
      *
      * @var bool
      */
-    public $incrementing = false;
+    // public $incrementing = false;
     /**
      * The attributes that are mass assignable.
      *

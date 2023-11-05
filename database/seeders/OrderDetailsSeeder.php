@@ -12,6 +12,9 @@ class OrderDetailsSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        // Customer::factory()
+        //     ->count(5)
+        //     ->has(Order::factory()->count(2))
+        //     ->create();
     }
 }

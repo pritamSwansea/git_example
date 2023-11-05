@@ -17,13 +17,13 @@ class Order extends Model
      *
      * @var string
      */
-    protected $primaryKey = 'orderId';
+    // protected $primaryKey = 'orderId';
     /**
      * Indicates if the model's ID is auto-incrementing.
      *
      * @var bool
      */
-    public $incrementing = false;
+    // public $incrementing = false;
     /**
      * The attributes that are mass assignable.
      *
@@ -39,7 +39,7 @@ class Order extends Model
      */
     public function customer(): BelongsTo
     {
-        return $this->belongsTo(Customer::class, 'foreign_key', 'customerId');
+        return $this->belongsTo(Customer::class);
     }
 
     /**

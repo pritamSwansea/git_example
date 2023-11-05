@@ -14,13 +14,13 @@ class Customer extends Model
      *
      * @var string
      */
-    protected $primaryKey = 'customerId';
+    // protected $primaryKey = 'customerId';
     /**
      * Indicates if the model's ID is auto-incrementing.
      *
      * @var bool
      */
-    public $incrementing = false;
+    // public $incrementing = false;
     /**
      * The attributes that are mass assignable.
      *
@@ -36,6 +36,6 @@ class Customer extends Model
      */
     public function orders(): HasMany
     {
-        return $this->hasMany(order::class, 'foreign_key', 'customerId');
+        return $this->hasMany(order::class);
     }
 }

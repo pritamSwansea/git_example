@@ -20,7 +20,7 @@ class OrderFactory extends Factory
             'orderDate' => now(),
             'orderAmount' => fake()->numberBetween(99, 999),
             'comments' => fake()->randomLetter(),
-            'customerId' => 1
+            'customer_id' => 1
         ];
     }
 }

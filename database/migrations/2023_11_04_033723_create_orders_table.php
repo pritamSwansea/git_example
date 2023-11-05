@@ -14,13 +14,13 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             // $table->id();
 
-            $table->id('orderId');
+            $table->id('id');
             $table->string('orderDate')->date();
             $table->string('orderAmount');
             $table->string('comments');
-            $table->unsignedBigInteger('customerId');
+            $table->unsignedBigInteger('customer_id');
 
-            $table->foreign('customerId')->references('customerId')->on('customers')
+            $table->foreign('customer_id')->references('id')->on('customers')
                 ->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
