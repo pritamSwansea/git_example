@@ -36,6 +36,6 @@ class Customer extends Model
      */
     public function orders(): HasMany
     {
-        return $this->hasMany(order::class);
+        return $this->hasMany(Order::class);
     }
 }

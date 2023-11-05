@@ -18,6 +18,9 @@ class OrderDetailsFactory extends Factory
     {
         return [
             //
+            'quantity' => fake()->numberBetween(0, 99),
+            'order_id' => 1,
+            'product_id' => 1
         ];
     }
 }

@@ -6,7 +6,6 @@ use App\Models\Customer;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Order extends Model
@@ -43,10 +42,10 @@ class Order extends Model
     }
 
     /**
-     * Get the order details which belongs to a order.
+     * Order has many order details.
      */
-    public function orderDetails(): BelongsToMany
+    public function orderDetails(): HasMany
     {
-        return $this->belongsToMany(OrderDetails::class, 'order_details', 'orderId');
+        return $this->hasMany(OrderDetails::class);
     }
 }
