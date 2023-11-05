@@ -2,6 +2,10 @@
 
 namespace App\Models;
 
+use App\Models\Order_products;
+
+use App\Models\Order;
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -34,11 +38,18 @@ class Product extends Model
         'productPrice'
     ];
 
-    /**
-     * Order has many order details.
-     */
-    public function orderDetails(): HasMany
+    // /**
+    //  * Order has many order details.
+    //  */
+    public function orderProduct(): HasMany
     {
-        return $this->hasMany(OrderDetails::class);
+        return $this->hasMany(Order_products::class);
+    }
+    /**
+     * The products that belong to the customer.
+     */
+    public function orders(): BelongsToMany
+    {
+        return $this->belongsToMany(Order::class, 'Order_products', 'product_id', 'order_id');
     }
 }

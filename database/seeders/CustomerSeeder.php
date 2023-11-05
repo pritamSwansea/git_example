@@ -3,8 +3,9 @@
 namespace Database\Seeders;
 
 use App\Models\Customer;
+use App\Models\CustomerDetails;
 use App\Models\Order;
-use App\Models\OrderDetails;
+use App\Models\Order_products;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -23,15 +24,8 @@ class CustomerSeeder extends Seeder
 
         Customer::factory()
             ->count(5)
-            ->has(
-                Order::factory()
-                    ->count(2)
-                // ->has(
-                //     OrderDetails::factory()
-                //         ->count(2)
-                // )
-
-            )
+            ->has(Order::factory()->count(2))
+            ->has(CustomerDetails::factory()->count(1))
             ->create();
     }
 }

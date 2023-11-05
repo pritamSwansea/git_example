@@ -11,17 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('orders', function (Blueprint $table) {
-            // $table->dropForeign('orders_customer_id_foreign');
+        Schema::create('customer_details', function (Blueprint $table) {
+            $table->id();
+            $table->string('email')->unique();
+            $table->string('phone')->unique();
 
-            $table->id('id');
-            $table->string('orderDate')->date();
-            $table->string('orderAmount');
-            $table->string('comments');
-            $table->unsignedBigInteger('customer_id');
-
+            $table->unsignedBigInteger('customer_id')->unsigned();
             $table->foreign('customer_id')->references('id')->on('customers');
             // ->onDelete('cascade')->onUpdate('cascade');
+
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('orders');
+        Schema::dropIfExists('customer_details');
     }
 };

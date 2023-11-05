@@ -19,7 +19,7 @@ class OrderFactory extends Factory
         return [
             'orderDate' => now(),
             'orderAmount' => fake()->numberBetween(99, 999),
-            'comments' => fake()->randomLetter(),
+            'comments' => fake()->realText(),
             'customer_id' => 1
         ];
     }

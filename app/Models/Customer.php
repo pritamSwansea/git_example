@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Customer extends Model
 {
@@ -31,6 +32,13 @@ class Customer extends Model
         'customerAddress',
         'taxId'
     ];
+    /**
+     * Get customer details.
+     */
+    public function customerDetails(): HasOne
+    {
+        return $this->hasOne(CustomerDetails::class);
+    }
     /**
      * Get the orders of customer.
      */

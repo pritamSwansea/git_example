@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\OrderDetails;
+use App\Models\Order_products;
 use App\Models\Product;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -20,22 +20,11 @@ class ProductSeeder extends Seeder
         // $product->productDescription = "Test product description";
         // $product->productPrice = "235.6";
         // $product->save();
+
         Product::factory()
             ->count(5)
-            ->has(
-                OrderDetails::factory()->count(2)
-            )
+            // ->has(Order_products::factory()->count(2))
+
             ->create();
-        // Customer::factory()
-        //     ->count(5)
-        //     ->has(
-        //         Order::factory()
-        //             ->count(2)
-        //         // ->has(
-        //         //     OrderDetails::factory()
-        //         //         ->count(2)
-        //         // )
-        //     )
-        //     ->create();
     }
 }
