@@ -15,18 +15,6 @@ class Product extends Model
 {
     use HasFactory;
     /**
-     * The primary key associated with the table.
-     *
-     * @var string
-     */
-    // protected $primaryKey = 'productId';
-    /**
-     * Indicates if the model's ID is auto-incrementing.
-     *
-     * @var bool
-     */
-    // public $incrementing = false;
-    /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
@@ -38,9 +26,9 @@ class Product extends Model
         'productPrice'
     ];
 
-    // /**
-    //  * Order has many order details.
-    //  */
+    /**
+     * Order has many order details.
+     */
     public function orderProduct(): HasMany
     {
         return $this->hasMany(Order_products::class);

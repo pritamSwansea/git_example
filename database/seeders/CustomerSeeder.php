@@ -16,12 +16,6 @@ class CustomerSeeder extends Seeder
      */
     public function run(): void
     {
-        // $customer = new Customer;
-        // $customer->customerName = "Test";
-        // $customer->customerAddress = "Swansea SA1, City center";
-        // $customer->taxId = 1234;
-        // $customer->save();
-
         Customer::factory()
             ->count(5)
             ->has(Order::factory()->count(2))

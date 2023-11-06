@@ -14,17 +14,8 @@ class ProductSeeder extends Seeder
      */
     public function run(): void
     {
-        // $product = new Product;
-        // $product->productCode = "P234";
-        // $product->productName = "Test product name";
-        // $product->productDescription = "Test product description";
-        // $product->productPrice = "235.6";
-        // $product->save();
-
         Product::factory()
             ->count(5)
-            // ->has(Order_products::factory()->count(2))
-
             ->create();
     }
 }

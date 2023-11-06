@@ -12,16 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('orders', function (Blueprint $table) {
-            // $table->dropForeign('orders_customer_id_foreign');
-
             $table->id('id');
             $table->string('orderDate')->date();
             $table->string('orderAmount');
             $table->string('comments');
             $table->unsignedBigInteger('customer_id');
 
-            $table->foreign('customer_id')->references('id')->on('customers');
-            // ->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('customer_id')->references('id')->on('customers')
+                ->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
